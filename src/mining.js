@@ -1,6 +1,5 @@
 const runQuery = require('./query');
 const runExportation = require('./csvExport');
-const formatToCsv = require('./formatToCsv');
 
 module.exports = async () => {
     let repos = [];
