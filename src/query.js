@@ -5,7 +5,7 @@ module.exports = async (language) => {
             search(type: REPOSITORY, first: 100, query: """
                 stars:>100
                 language:${language}
-                """) {
+            """) {
                 repositoryCount
                 pageInfo {
                 endCursor
@@ -17,10 +17,20 @@ module.exports = async (language) => {
                     primaryLanguage {
                         name
                     }
+                    watchers {
+                        totalCount
+                    }
+                    createdAt
+                    forks {
+                        totalCount
+                    }
+                    releases {
+                        totalCount
+                    }
                 }
                 }
             }
-        }  
+        }
     `)
     return res;
 };
