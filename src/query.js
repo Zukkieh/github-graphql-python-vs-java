@@ -12,6 +12,8 @@ module.exports = async (language) => {
                 }
                 nodes {
                 ... on Repository {
+                    url
+                    name
                     nameWithOwner
                     stargazerCount
                     primaryLanguage {
