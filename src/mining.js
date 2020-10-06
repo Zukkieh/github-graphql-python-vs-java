@@ -55,7 +55,7 @@ module.exports = async () => {
                 .filter(item => item.includes('\n'))
                 .map(item => item.match(/\d+/))
                 .filter((item, index) => index !== 0 && index !== 1 && index !== 10 && index !== 11)
-                .map(item => Number(item[0]) || 0)
+                .map(item => isNaN(Number(item[0])) ? 0 : Number(item[0]))
                 const loc = {
                     name: reposUrl[i].name,
                     code: numbers[0] + numbers[1] + numbers[5] + numbers[7],
